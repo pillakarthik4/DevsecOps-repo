@@ -1,38 +1,28 @@
-resource "aws_s3_bucket" "devsecops_flowlog_bucket-1" {
+resource "aws_s3_bucket" "devsecops_flowlog_bucket_1" {
   bucket = "devsecopsflowlogbucket-1"
 
-  tag = {d
+  tags = {
     Name        = "devsecopsflowlogbucket-1"
-    Enviornment = "Dev"
+    Environment = "Dev"
   }
-  depends_on = [aws_s3_bucket.devsecops_flowlog_bucket-2]
+
+  depends_on = [aws_s3_bucket.devsecops_flowlog_bucket_2]
+
   lifecycle {
     create_before_destroy = true
   }
 }
 
-
-resource "aws_s3_bucket" "devsecops_flowlog_bucket-2" {
+resource "aws_s3_bucket" "devsecops_flowlog_bucket_2" {
   bucket = "devsecopsflowlogbucket-2"
 
-  tag = {
+  tags = {
     Name        = "devsecopsflowlogbucket-2"
-    Enviornment = "Dev"
+    Environment = "Dev"
   }
-  depends_on = [aws_s3_bucket.devsecops_flowlog_bucket-3]
-  lifecycle {
-    create_before_destroy = true
-  }
-}
 
-resource "aws_s3_bucket" "devsecops_flowlog_bucket-3" {
-  bucket = "devsecopsflowlogbucket-3"
+  depends_on = [aws_s3_bucket.devsecops_flowlog_bucket_3]
 
-  tag = {
-    Name        = "devsecopsflowlogbucket-3"
-    Enviornment = "Dev"
-  }
-  depends_on = [aws_route_table_association.terraform-public-1]
   lifecycle {
     create_before_destroy = true
   }
