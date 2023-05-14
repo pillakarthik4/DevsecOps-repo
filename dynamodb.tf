@@ -10,3 +10,4 @@ resource "aws-dynamodb_table" "terraform_locks" {
   }
 
 }
+
