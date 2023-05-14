@@ -7,9 +7,11 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "devsecotfbucket"
-    key    = "devsecopsb3444.tfstate"
-    region = "us-east-1"
+    bucket         = "devsecotfbucket"
+    key            = "devsecopsb3444.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "devsecopsb343535terraform_locks"
+    encrypt        = true
   }
 
 }
