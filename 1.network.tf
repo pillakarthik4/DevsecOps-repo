@@ -4,7 +4,7 @@ resource "aws_vpc" "DevOps-vpc1" {
   cidr_block           = var.nv_vpc1_cidr
   enable_dns_hostnames = true
   tags = {
-    Name = var.nv_vpc1
+    Name = "${var.nv_vpc1}"
   }
 }
 resource "aws_internet_gateway" "DevOps-vpc1_igw" {
@@ -19,7 +19,7 @@ resource "aws_vpc" "DevOps-vpc2" {
   cidr_block           = var.nv_vpc2_cidr
   enable_dns_hostnames = true
   tags = {
-    Name = var.nv_vpc2
+    Name = "${var.nv_vpc2}"
 
 
   }
@@ -47,7 +47,7 @@ resource "aws_vpc" "ohio_DevOps-vpc1" {
   cidr_block           = var.ohio_vpc1_cidr
   enable_dns_hostnames = true
   tags = {
-    Name = var.ohio_vpc1
+    Name = "${var.ohio_vpc1}"
 
 
   }
@@ -67,7 +67,7 @@ resource "aws_vpc" "ohio_DevOps-vpc2" {
   cidr_block           = var.ohio_vpc2_cidr
   enable_dns_hostnames = true
   tags = {
-    Name = var.ohio_vpc2
+    Name = "${var.ohio_vpc2}"
 
 
   }
